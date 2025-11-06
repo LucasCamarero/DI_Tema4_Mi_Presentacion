@@ -39,7 +39,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -90,7 +89,7 @@ fun VentanaPrincipal() {
         Column(
             modifier = Modifier
                 .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.secondary),
+                .background(MaterialTheme.colorScheme.onPrimaryContainer),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             // definición de rutas de pantallas
@@ -134,13 +133,13 @@ fun BarraSuperior() {
 
     TopAppBar(
         colors = topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            titleContentColor = MaterialTheme.colorScheme.secondary,
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.tertiary,
         ),
         title = {
             Text(
                 "Sobre mí",
-                fontSize = 18.sp,
+                style = MaterialTheme.typography.titleLarge
             )
         },
         // INTENT para compartir contenido (icono de redes sociales)
@@ -155,7 +154,7 @@ fun BarraSuperior() {
                 Icon(
                     imageVector = Icons.Default.Share,
                     contentDescription = "Compartir",
-                    tint = MaterialTheme.colorScheme.secondary,
+                    tint = MaterialTheme.colorScheme.tertiary,
                     modifier = Modifier.size(30.dp)
                 )
             }
@@ -171,7 +170,7 @@ fun BarraInferior(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    NavigationBar (containerColor = MaterialTheme.colorScheme.primary){
+    NavigationBar (containerColor = MaterialTheme.colorScheme.primaryContainer){
 
         NavigationBarItem(
             icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
@@ -191,13 +190,13 @@ fun BarraInferior(navController: NavHostController) {
                 }
             },
             label = { Text("Home",
-                fontSize = 10.sp,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.White,
                 selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.secondary,
-                unselectedTextColor = MaterialTheme.colorScheme.secondary,
+                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
                 indicatorColor = Color.Transparent
             )
         )
@@ -214,13 +213,13 @@ fun BarraInferior(navController: NavHostController) {
                 }
             },
             label = { Text("Info",
-                fontSize = 10.sp,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.White,
                 selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.secondary,
-                unselectedTextColor = MaterialTheme.colorScheme.secondary,
+                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
                 indicatorColor = Color.Transparent
             )
         )
@@ -237,13 +236,13 @@ fun BarraInferior(navController: NavHostController) {
                 }
             },
             label = { Text("Galería",
-                fontSize = 10.sp,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.White,
                 selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.secondary,
-                unselectedTextColor = MaterialTheme.colorScheme.secondary,
+                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
                 indicatorColor = Color.Transparent
             )
         )
@@ -260,13 +259,13 @@ fun BarraInferior(navController: NavHostController) {
                 }
             },
             label = { Text("Ajustes",
-                fontSize = 10.sp,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.White,
                 selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.secondary,
-                unselectedTextColor = MaterialTheme.colorScheme.secondary,
+                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
                 indicatorColor = Color.Transparent
             )
         )
@@ -283,13 +282,13 @@ fun BarraInferior(navController: NavHostController) {
                 }
             },
             label = { Text("Salir",
-                fontSize = 10.sp,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.White,
                 selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.secondary,
-                unselectedTextColor = MaterialTheme.colorScheme.secondary,
+                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
                 indicatorColor = Color.Transparent
             )
         )
@@ -327,13 +326,13 @@ fun BarraInferior(navController: NavHostController) {
                     Icon(
                         Icons.Default.Email,
                         contentDescription = "Email",
-                        tint = MaterialTheme.colorScheme.secondary,
+                        tint = MaterialTheme.colorScheme.tertiary,
                         modifier = Modifier.size(30.dp)
                     )
                     Text(
                         text = "E-mail",
-                        color = MaterialTheme.colorScheme.secondary,
-                        fontSize = 12.sp
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
             }
@@ -350,13 +349,13 @@ fun BarraInferior(navController: NavHostController) {
                     Icon(
                         imageVector = Icons.Default.Home,
                         contentDescription = "Otra actividad",
-                        tint = MaterialTheme.colorScheme.secondary,
+                        tint = MaterialTheme.colorScheme.tertiary,
                         modifier = Modifier.size(30.dp)
                     )
                     Text(
                         text = "Actividad",
-                        color = MaterialTheme.colorScheme.secondary,
-                        fontSize = 12.sp
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
             }
@@ -377,13 +376,13 @@ fun FAB() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             context.startActivity(intent)
         },
-        containerColor = MaterialTheme.colorScheme.primary
+        containerColor = MaterialTheme.colorScheme.primaryContainer
     ) {
         Icon(
             Icons.Default.Add,
             contentDescription = "Add",
-            tint = MaterialTheme.colorScheme.secondary,
-            modifier = Modifier.size(20.dp)
+            tint = MaterialTheme.colorScheme.tertiary,
+            modifier = Modifier.size(30.dp)
         )
     }
 }

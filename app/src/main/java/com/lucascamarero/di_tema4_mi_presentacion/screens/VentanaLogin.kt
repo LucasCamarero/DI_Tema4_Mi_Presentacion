@@ -1,14 +1,16 @@
 package com.lucascamarero.di_tema4_mi_presentacion.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,7 +30,9 @@ fun VentanaLogin(navController: NavController, userViewModel: UserViewModel) {
     var error by remember { mutableStateOf(false) }
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.secondary),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -38,7 +42,15 @@ fun VentanaLogin(navController: NavController, userViewModel: UserViewModel) {
                 onValueChange = { nuevoTexto ->
                     texto = nuevoTexto },
                 label = { Text("Escribe un número") },
-                isError = error
+                isError = error,
+                colors = TextFieldDefaults.colors(
+                    focusedIndicatorColor = MaterialTheme.colorScheme.tertiary,    // borde activo
+                    unfocusedIndicatorColor = MaterialTheme.colorScheme.onPrimary, // borde inactivo
+                    cursorColor = MaterialTheme.colorScheme.tertiary,              // cursor
+                    focusedLabelColor = MaterialTheme.colorScheme.onPrimary,       // label activo
+                    unfocusedLabelColor = MaterialTheme.colorScheme.tertiary,      // label inactivo
+                    focusedTextColor = MaterialTheme.colorScheme.tertiary          // texto
+                )
             )
 
             Spacer(modifier = Modifier.height(16.dp))

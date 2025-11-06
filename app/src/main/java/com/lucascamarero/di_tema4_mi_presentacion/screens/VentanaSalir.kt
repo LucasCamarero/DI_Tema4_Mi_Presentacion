@@ -5,13 +5,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 // Tarea optativa: ALERT DIALOG para cerrar la app
@@ -28,7 +28,6 @@ fun VentanaSalir(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
             .background(MaterialTheme.colorScheme.secondary),
         //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -43,16 +42,24 @@ fun VentanaSalir(navController: NavController) {
                     navController.popBackStack() // volver atrás
                 },
                 title = {
-                    Text(text = "Salir de la aplicación")
+                    Text(text = "Salir de la app",
+                        color = MaterialTheme.colorScheme.primaryContainer,
+                        style = MaterialTheme.typography.titleLarge)
                 },
                 text = {
-                    Text("¿Estás seguro de que deseas salir?")
+                    Text("¿Estás seguro de que deseas salir?",
+                        color = MaterialTheme.colorScheme.onPrimary,
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontSize = 20.sp)
                 },
                 confirmButton = {
                     TextButton(onClick = {
                         activity?.finish() // cierra la actividad
                     }) {
-                        Text("Sí")
+                        Text("Sí",
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontSize = 25.sp)
                     }
                 },
                 dismissButton = {
@@ -60,9 +67,13 @@ fun VentanaSalir(navController: NavController) {
                         mostrarDialogo = false
                         navController.popBackStack() // vuelve atrás
                     }) {
-                        Text("No")
+                        Text("No",
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontSize = 25.sp)
                     }
-                }
+                },
+                containerColor = MaterialTheme.colorScheme.tertiaryContainer
             )
         }
     }

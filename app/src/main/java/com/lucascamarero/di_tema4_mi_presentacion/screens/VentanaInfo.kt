@@ -19,11 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.lucascamarero.di_tema4_mi_presentacion.R
 import com.lucascamarero.di_tema4_mi_presentacion.UserViewModel
@@ -35,7 +35,6 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.secondary),
-        //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
@@ -47,7 +46,9 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                 modifier = Modifier
                     .padding(top = 20.dp)
                     .size(180.dp)
-                    .border(width = 5.dp, color = Color.White, shape = CircleShape)
+                    .border(width = 5.dp,
+                        color = MaterialTheme.colorScheme.tertiaryContainer,
+                        shape = CircleShape)
                     .clip(CircleShape)
             )
             // texto con mi nombre
@@ -56,8 +57,9 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                 modifier = Modifier
                     .padding(top = 10.dp, bottom = 10.dp)
                     .fillMaxWidth(),
-                Color.White,
-                fontSize = 25.sp,
+                color = MaterialTheme.colorScheme.tertiaryContainer,
+                style = MaterialTheme.typography.titleLarge,
+                //fontSize = 25.sp,
                 textAlign = TextAlign.Center
             )
             // texto de introducción
@@ -67,8 +69,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                     .padding(bottom = 20.dp)
                     .padding(horizontal = 15.dp)
                     .fillMaxWidth(),
-                Color.White,
-                fontSize = 15.sp,
+                color = MaterialTheme.colorScheme.onPrimary,
+                style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )
 
@@ -84,7 +86,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                         painter = painterResource(id = R.drawable.educacion),
                         contentDescription = "Imagen educacion",
                         modifier = Modifier
-                            .size(65.dp)
+                            .size(65.dp),
+                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiaryContainer, BlendMode.SrcIn)
                     )
                     LazyColumn(
                         modifier = Modifier
@@ -98,8 +101,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 modifier = Modifier
                                     .padding(top = 3.dp, bottom = 11.dp)
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 25.sp,
+                                color = MaterialTheme.colorScheme.tertiaryContainer,
+                                style = MaterialTheme.typography.titleLarge,
                                 textAlign = TextAlign.Left
                             )
 
@@ -107,8 +110,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 "Estudiante de D.A.M.",
                                 modifier = Modifier
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 15.sp,
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Left
                             )
                         }
@@ -127,7 +130,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                         painter = painterResource(id = R.drawable.deportes),
                         contentDescription = "Imagen deportes",
                         modifier = Modifier
-                            .size(65.dp)
+                            .size(65.dp),
+                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiaryContainer, BlendMode.SrcIn)
                     )
                     LazyColumn(
                         modifier = Modifier
@@ -141,8 +145,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 modifier = Modifier
                                     .padding(top = 3.dp, bottom = 11.dp)
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 25.sp,
+                                color = MaterialTheme.colorScheme.tertiaryContainer,
+                                style = MaterialTheme.typography.titleLarge,
                                 textAlign = TextAlign.Left
                             )
 
@@ -150,8 +154,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 "Gimnasio, andar, montaña",
                                 modifier = Modifier
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 15.sp,
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Left
                             )
                         }
@@ -170,7 +174,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                         painter = painterResource(id = R.drawable.comida),
                         contentDescription = "Imagen comida",
                         modifier = Modifier
-                            .size(65.dp)
+                            .size(65.dp),
+                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiaryContainer, BlendMode.SrcIn)
                     )
                     LazyColumn(
                         modifier = Modifier
@@ -184,8 +189,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 modifier = Modifier
                                     .padding(top = 3.dp, bottom = 11.dp)
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 25.sp,
+                                color = MaterialTheme.colorScheme.tertiaryContainer,
+                                style = MaterialTheme.typography.titleLarge,
                                 textAlign = TextAlign.Left
                             )
 
@@ -193,8 +198,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 "Rodaballo, besugo, chuleta",
                                 modifier = Modifier
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 15.sp,
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Left
                             )
                         }
@@ -213,7 +218,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                         painter = painterResource(id = R.drawable.hobbies),
                         contentDescription = "Imagen hobbies",
                         modifier = Modifier
-                            .size(65.dp)
+                            .size(65.dp),
+                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiaryContainer, BlendMode.SrcIn)
                     )
                     LazyColumn(
                         modifier = Modifier
@@ -227,8 +233,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 modifier = Modifier
                                     .padding(top = 3.dp, bottom = 11.dp)
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 25.sp,
+                                color = MaterialTheme.colorScheme.tertiaryContainer,
+                                style = MaterialTheme.typography.titleLarge,
                                 textAlign = TextAlign.Left
                             )
 
@@ -236,8 +242,8 @@ fun VentanaInfo(navController: NavController, userViewModel: UserViewModel) {
                                 "Música, tocar el bajo",
                                 modifier = Modifier
                                     .fillMaxWidth(),
-                                Color.White,
-                                fontSize = 15.sp,
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                style = MaterialTheme.typography.bodyMedium,
                                 textAlign = TextAlign.Left
                             )
                         }

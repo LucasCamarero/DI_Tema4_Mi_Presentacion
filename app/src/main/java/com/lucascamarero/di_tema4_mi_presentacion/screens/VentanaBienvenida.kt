@@ -18,8 +18,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.lucascamarero.di_tema4_mi_presentacion.UserViewModel
 
@@ -34,7 +34,6 @@ fun VentanaBienvenida(navController: NavController, userViewModel: UserViewModel
         modifier = Modifier
         .fillMaxSize()
         .background(MaterialTheme.colorScheme.secondary),
-        //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
         item {
@@ -43,7 +42,7 @@ fun VentanaBienvenida(navController: NavController, userViewModel: UserViewModel
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 15.dp, vertical = 4.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.LightGray),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
                 elevation = CardDefaults.cardElevation(6.dp), // sombra
                 shape = RoundedCornerShape(12.dp)
             ) {
@@ -53,7 +52,10 @@ fun VentanaBienvenida(navController: NavController, userViewModel: UserViewModel
                         .padding(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text("El número elegido es el ${numero}")
+                    Text("El número elegido es el ${numero}",
+                        color = MaterialTheme.colorScheme.onPrimary,
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontSize = 20.sp)
 
                     Spacer(modifier = Modifier.height(16.dp))
 

@@ -49,9 +49,7 @@ fun VentanaGallery(navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
             .background(MaterialTheme.colorScheme.secondary),
-        //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -107,23 +105,25 @@ fun MessageCard(msg: Message) {
             painter = painterResource(R.drawable.comida),
             contentDescription = null,
             modifier = Modifier
-                .size(40.dp)
+                .size(80.dp)
+                .padding(horizontal = 8.dp)
                 .clip(CircleShape)
-                .border(1.5.dp, MaterialTheme.colorScheme.primary, CircleShape)
+                .border(1.5.dp, MaterialTheme.colorScheme.tertiaryContainer, CircleShape)
         )
         Spacer(modifier = Modifier.width(8.dp))
 
         Column {
             Text(
                 text = msg.author,
-                color = MaterialTheme.colorScheme.secondary,
-                style = MaterialTheme.typography.titleSmall
+                color = MaterialTheme.colorScheme.tertiaryContainer,
+                style = MaterialTheme.typography.titleLarge
             )
 
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
                 text = msg.body + msg.toquesBoton,
+                color = MaterialTheme.colorScheme.tertiaryContainer,
                 style = MaterialTheme.typography.bodyMedium
             )
         }
