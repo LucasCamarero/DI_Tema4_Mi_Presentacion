@@ -32,6 +32,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -113,7 +115,8 @@ fun MessageCard(msg: Message) {
                 .size(80.dp)
                 .padding(horizontal = 8.dp)
                 .clip(CircleShape)
-                .border(1.5.dp, MaterialTheme.colorScheme.tertiaryContainer, CircleShape)
+                .border(1.5.dp, MaterialTheme.colorScheme.tertiaryContainer, CircleShape),
+            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiaryContainer, BlendMode.SrcIn)
         )
         Spacer(modifier = Modifier.width(8.dp))
 
