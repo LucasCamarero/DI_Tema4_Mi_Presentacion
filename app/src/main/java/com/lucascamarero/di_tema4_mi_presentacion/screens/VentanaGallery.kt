@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,7 +50,7 @@ fun VentanaGallery(navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary),
+            .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -59,9 +60,13 @@ fun VentanaGallery(navController: NavController) {
                 onClick = {
                     launcher.launch("image/*")
                 },
-                modifier = Modifier.padding(30.dp)
+                modifier = Modifier.padding(30.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary)
             ) {
-                Text("Imágenes")
+                Text("Imágenes",
+                    style = MaterialTheme.typography.bodySmall)
             }
         }
 

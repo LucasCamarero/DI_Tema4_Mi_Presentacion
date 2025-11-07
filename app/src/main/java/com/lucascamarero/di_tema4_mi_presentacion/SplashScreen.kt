@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,7 +52,7 @@ fun SplashScreen(onTimeout: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.onPrimary),
+            .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -78,21 +79,20 @@ fun SplashScreen(onTimeout: () -> Unit) {
                     .fillMaxWidth()
                     .padding(15.dp)
                     .background(MaterialTheme.colorScheme.primaryContainer),
-                    //.background(Color.DarkGray),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center) {
                     Text(
                         text = "Lucas Camarero",
                         style = MaterialTheme.typography.titleLarge,
                         fontSize = 25.sp,
-                        color = MaterialTheme.colorScheme.tertiaryContainer
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
                         text = "Desarrollador Android",
                         style = MaterialTheme.typography.bodyMedium,
                         fontSize = 20.sp,
-                        color = MaterialTheme.colorScheme.tertiaryContainer
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 }
             }

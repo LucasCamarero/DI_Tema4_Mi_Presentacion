@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -33,7 +34,7 @@ fun VentanaBienvenida(navController: NavController, userViewModel: UserViewModel
     LazyColumn(
         modifier = Modifier
         .fillMaxSize()
-        .background(MaterialTheme.colorScheme.secondary),
+        .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
         item {
@@ -53,16 +54,20 @@ fun VentanaBienvenida(navController: NavController, userViewModel: UserViewModel
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text("El número elegido es el ${numero}",
-                        color = MaterialTheme.colorScheme.onPrimary,
+                        color = MaterialTheme.colorScheme.onTertiaryContainer,
                         style = MaterialTheme.typography.bodyMedium,
                         fontSize = 20.sp)
 
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Button(
-                        onClick = { navController.navigate("info") }
+                        onClick = { navController.navigate("info") },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary)
                     ) {
-                        Text("Ir a Info")
+                        Text("Ir a Info",
+                            style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }

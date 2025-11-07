@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -32,7 +33,7 @@ fun VentanaLogin(navController: NavController, userViewModel: UserViewModel) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary),
+            .background(MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -44,11 +45,11 @@ fun VentanaLogin(navController: NavController, userViewModel: UserViewModel) {
                 label = { Text("Escribe un número") },
                 isError = error,
                 colors = TextFieldDefaults.colors(
-                    focusedIndicatorColor = MaterialTheme.colorScheme.tertiary,    // borde activo
+                    focusedIndicatorColor = MaterialTheme.colorScheme.primary,     // borde activo
                     unfocusedIndicatorColor = MaterialTheme.colorScheme.onPrimary, // borde inactivo
-                    cursorColor = MaterialTheme.colorScheme.tertiary,              // cursor
-                    focusedLabelColor = MaterialTheme.colorScheme.onPrimary,       // label activo
-                    unfocusedLabelColor = MaterialTheme.colorScheme.tertiary,      // label inactivo
+                    cursorColor = MaterialTheme.colorScheme.primary,               // cursor
+                    focusedLabelColor = MaterialTheme.colorScheme.primary,         // label activo
+                    unfocusedLabelColor = MaterialTheme.colorScheme.onPrimary,     // label inactivo
                     focusedTextColor = MaterialTheme.colorScheme.tertiary          // texto
                 )
             )
@@ -64,8 +65,11 @@ fun VentanaLogin(navController: NavController, userViewModel: UserViewModel) {
                 } else {
                     error = true
                 }
-            }) {
-                Text("Entrar")
+            }, colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary)) {
+                Text("Entrar",
+                    style = MaterialTheme.typography.bodySmall)
             }
         }
     }

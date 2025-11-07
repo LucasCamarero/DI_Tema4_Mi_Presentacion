@@ -99,7 +99,7 @@ fun VentanaPrincipal() {
         Column(
             modifier = Modifier
                 .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.onPrimaryContainer),
+                .background(MaterialTheme.colorScheme.background),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             // definición de rutas de pantallas
@@ -144,7 +144,7 @@ fun BarraSuperior() {
     TopAppBar(
         colors = topAppBarColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
-            titleContentColor = MaterialTheme.colorScheme.tertiary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
         ),
         title = {
             Text(
@@ -164,7 +164,7 @@ fun BarraSuperior() {
                 Icon(
                     imageVector = Icons.Default.Share,
                     contentDescription = "Compartir",
-                    tint = MaterialTheme.colorScheme.tertiary,
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer,
                     modifier = Modifier.size(30.dp)
                 )
             }
@@ -203,10 +203,10 @@ fun BarraInferior(navController: NavHostController) {
                 style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Color.White,
-                selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
-                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 indicatorColor = Color.Transparent
             )
         )
@@ -226,10 +226,10 @@ fun BarraInferior(navController: NavHostController) {
                 style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Color.White,
-                selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
-                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 indicatorColor = Color.Transparent
             )
         )
@@ -249,10 +249,10 @@ fun BarraInferior(navController: NavHostController) {
                 style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Color.White,
-                selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
-                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 indicatorColor = Color.Transparent
             )
         )
@@ -272,10 +272,10 @@ fun BarraInferior(navController: NavHostController) {
                 style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Color.White,
-                selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
-                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 indicatorColor = Color.Transparent
             )
         )
@@ -295,10 +295,10 @@ fun BarraInferior(navController: NavHostController) {
                 style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center) },
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Color.White,
-                selectedTextColor = Color.White,
-                unselectedIconColor = MaterialTheme.colorScheme.tertiary,
-                unselectedTextColor = MaterialTheme.colorScheme.tertiary,
+                selectedIconColor = MaterialTheme.colorScheme.primary,
+                selectedTextColor = MaterialTheme.colorScheme.primary,
+                unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 indicatorColor = Color.Transparent
             )
         )
@@ -391,7 +391,7 @@ fun FAB() {
         Icon(
             Icons.Default.Add,
             contentDescription = "Add",
-            tint = MaterialTheme.colorScheme.tertiary,
+            tint = MaterialTheme.colorScheme.onPrimaryContainer,
             modifier = Modifier.size(30.dp)
         )
     }

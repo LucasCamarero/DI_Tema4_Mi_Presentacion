@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
@@ -31,7 +32,7 @@ fun VentanaHome(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             //.padding(16.dp)
-            .background(MaterialTheme.colorScheme.secondary),
+            .background(MaterialTheme.colorScheme.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -41,9 +42,12 @@ fun VentanaHome(navController: NavController) {
                 scope.launch {
                     snackbarHostState.showSnackbar("¡Hola desde Home!")
                 }
-            }
+            }, colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary)
         ) {
-            Text("Mostrar Snackbar")
+            Text("Mostrar Snackbar",
+                style = MaterialTheme.typography.bodySmall)
         }
 
         // componente que muestra realmente el Snackbar en pantalla
@@ -54,7 +58,7 @@ fun VentanaHome(navController: NavController) {
             Snackbar(
                 snackbarData = data,
                 containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimary
+                contentColor = MaterialTheme.colorScheme.onTertiaryContainer
             )
         }
     }

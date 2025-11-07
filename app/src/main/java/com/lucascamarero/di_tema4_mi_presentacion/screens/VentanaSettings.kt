@@ -28,7 +28,7 @@ fun VentanaSettings(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary),
+            .background(MaterialTheme.colorScheme.background),
         //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center

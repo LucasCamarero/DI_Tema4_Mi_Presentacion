@@ -28,7 +28,7 @@ fun VentanaSalir(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary),
+            .background(MaterialTheme.colorScheme.background),
         //.background(Color.DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -43,21 +43,23 @@ fun VentanaSalir(navController: NavController) {
                 },
                 title = {
                     Text(text = "Salir de la app",
-                        color = MaterialTheme.colorScheme.primaryContainer,
+                        color = MaterialTheme.colorScheme.onTertiaryContainer,
                         style = MaterialTheme.typography.titleLarge)
                 },
                 text = {
                     Text("¿Estás seguro de que deseas salir?",
-                        color = MaterialTheme.colorScheme.onPrimary,
+                        color = MaterialTheme.colorScheme.onTertiaryContainer,
                         style = MaterialTheme.typography.bodyMedium,
                         fontSize = 20.sp)
                 },
                 confirmButton = {
                     TextButton(onClick = {
                         activity?.finish() // cierra la actividad
-                    }) {
+                    },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary)) {
                         Text("Sí",
-                            color = MaterialTheme.colorScheme.onPrimary,
                             style = MaterialTheme.typography.bodyMedium,
                             fontSize = 25.sp)
                     }
@@ -66,9 +68,11 @@ fun VentanaSalir(navController: NavController) {
                     TextButton(onClick = {
                         mostrarDialogo = false
                         navController.popBackStack() // vuelve atrás
-                    }) {
+                    },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary)) {
                         Text("No",
-                            color = MaterialTheme.colorScheme.onPrimary,
                             style = MaterialTheme.typography.bodyMedium,
                             fontSize = 25.sp)
                     }
